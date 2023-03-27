@@ -1,6 +1,6 @@
 {
   "name": "@jdietrichdev/simple-package",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "First attempt at creating an npm package",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
