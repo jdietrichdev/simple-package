@@ -28,6 +28,11 @@
       }
     }
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "author": "jdietrichdev",
   "license": "ISC",
   "devDependencies": {
