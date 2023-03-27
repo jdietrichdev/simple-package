@@ -1,6 +1,6 @@
 {
   "name": "@jdietrichdev/simple-package",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "First attempt at creating an npm package",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
@@ -10,7 +10,8 @@
     "build:esm": "tsc -p ./tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "prepack": "npm run build",
-    "test": "mocha"
+    "test": "mocha",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "lib/**/*"
@@ -34,7 +35,12 @@
     "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
+    "semantic-release": "^21.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdietrichdev/simple-package.git"
   }
 }
