@@ -1,6 +1,6 @@
 {
   "name": "@jdietrichdev/simple-package",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantic-release",
   "description": "First attempt at creating an npm package",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
@@ -11,6 +11,7 @@
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "prepack": "npm run build",
     "test": "mocha",
+    "prepare": "husky install",
     "semantic-release": "semantic-release"
   },
   "files": [
@@ -39,9 +40,12 @@
   "author": "jdietrichdev",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
+    "husky": "^8.0.3",
     "mocha": "^10.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2"
