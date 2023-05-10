@@ -2,6 +2,9 @@ export const test = () => {
   return 'Hello world';
 }
 
+export const TEST_VALUE = 'test';
+
 export default {
-  test
+  test,
+  TEST_VALUE
 }
