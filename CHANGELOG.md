@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/jdietrichdev/simple-package/compare/v1.0.6...v1.0.7) (2023-05-15)
+
+
+### Bug Fixes
+
+* creating automatic documentation ([2f287b4](https://github.com/jdietrichdev/simple-package/commit/2f287b435f0f6e3e1f365588e3d35a0b1201a031))
+
 ## [1.0.6](https://github.com/jdietrichdev/simple-package/compare/v1.0.5...v1.0.6) (2023-05-10)
 
 
