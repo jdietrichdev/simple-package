@@ -3,3 +3,6 @@
 
 # Built code
 /lib
+
+#Test Coverage
+/.nyc_output
