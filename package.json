@@ -11,7 +11,7 @@
     "build:cjs": "tsc -p ./config/tsconfig.cjs.json",
     "build-docs": "typedoc",
     "lint": "eslint --config ./config/.eslintrc --ext .ts .",
-    "test": "mocha --config ./config/.mocharc.json",
+    "test": "nyc --check-coverage --lines 90 mocha --config ./config/.mocharc.json",
     "prepare": "husky install"
   },
   "files": [
@@ -48,6 +48,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.8.8",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.7",
