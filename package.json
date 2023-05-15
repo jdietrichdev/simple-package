@@ -7,14 +7,16 @@
   "scripts": {
     "clean": "rm -rf ./lib",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p ./tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
-    "build:cjs": "tsc -p ./tsconfig.cjs.json",
-    "lint": "eslint .",
-    "test": "mocha",
+    "build:esm": "tsc -p ./config/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./config/tsconfig.cjs.json",
+    "build-docs": "typedoc",
+    "lint": "eslint --config ./config/.eslintrc --ext .ts .",
+    "test": "nyc --check-coverage --lines 90 mocha --config ./config/.mocharc.json",
     "prepare": "husky install"
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
@@ -46,8 +48,10 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.8.8",
     "ts-node": "^10.9.1",
+    "typedoc": "^0.24.7",
     "typescript": "^5.0.2"
   },
   "repository": {

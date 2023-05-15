@@ -10,5 +10,11 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true
   },
-  "files": ["./src/index.ts"]
+  "typedocOptions": {
+    "name": "simple-package",
+    "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
+    "out": "docs"
+  },
+  "include": ["./src/**/*.ts"]
 }
