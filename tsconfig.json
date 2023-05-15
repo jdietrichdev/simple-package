@@ -11,9 +11,10 @@
     "allowSyntheticDefaultImports": true
   },
   "typedocOptions": {
-      "entryPoints": ["src"],
-      "entryPointStrategy": "expand",
-      "out": "docs"
+    "name": "simple-package",
+    "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
+    "out": "docs"
   },
   "include": ["./src/**/*.ts"]
 }
