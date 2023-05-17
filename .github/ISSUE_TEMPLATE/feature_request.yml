@@ -1,0 +1,55 @@
+name: Bug Report
+description: Suggest a feature for this project
+title: "[Feature]: "
+labels: ["feature"]
+assignees: [jdietrichdev]
+
+body: 
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for looking for ways to improve our package!
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      description: Clear description of the feature you would like implemented.
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: What is the driver for this feature?
+    validations:
+        required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        Suggestions on how this could be implemented, feel free to provide prototype or pseudocode.
+    validations:
+      required: false
+  - type: textarea
+    id: other
+    attributes:
+      label: Other Information
+      description: |
+        Any additional context, information, or possible solutions that could assist with implementation of the feature
+    validations:
+      required: false
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Assistance
+      description: Are you able to help with fixing this issue?
+      options:
+        - label: I may be able to implement this feature
+        - label: I will need help implementing the feature
+  - type: checkboxes
+    id: breaking
+    attributes: 
+      label: Breaking Change
+      options:
+        - label: This feature may require a breaking change
