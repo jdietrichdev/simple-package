@@ -1,0 +1,25 @@
+name: Documentation Update
+description: Suggest updates to documentation
+title: "[Docs]: "
+labels: ["docs"]
+assignees: [jdietrichdev]
+
+body: 
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep our documentation up to date!
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the issue
+      description: Please describe the updates that are needed in our documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Location
+      description: Please include a link or location of the documentation that needs updating.
+    validations:
+      required: true
