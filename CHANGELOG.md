@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/jdietrichdev/simple-package/compare/v1.0.8...v1.0.9) (2023-05-18)
+
+
+### Bug Fixes
+
+* **release:** allowing release with branch protections ([6553cc4](https://github.com/jdietrichdev/simple-package/commit/6553cc4f514675aa3201711fd860539f06eaf2a6))
+
 ## [1.0.8](https://github.com/jdietrichdev/simple-package/compare/v1.0.7...v1.0.8) (2023-05-15)
 
 
