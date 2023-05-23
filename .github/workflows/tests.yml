@@ -2,11 +2,12 @@ name: Tests
 
 on:
   push:
+    branches-ignore:
+      - "main"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
 
     strategy:
       matrix:
