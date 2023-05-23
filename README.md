@@ -18,18 +18,18 @@ Guide for getting this template repository set up for usage with your own NPM pa
 #### Additional Configuration Updates (optional)
 
 1. Build configuration using the `tsconfig.*.json` files
-    - `tsconfig.base.json` - General build configuration (rules, files, etc)
-    - `tsconfig.cjs.json` - Configuration for building package for CommonJS modules
-    - `tsconfig.esm.json` - Configuration for building package for ECMAScript modules
-1. ESLint configuration using the `.eslintrc` and `.prettierrc` files
+    - `tsconfig.json` - General build configuration (rules, files, etc)
+    - `config/tsconfig.cjs.json` - Configuration for building package for CommonJS modules
+    - `config/tsconfig.esm.json` - Configuration for building package for ECMAScript modules
+1. ESLint configuration using the `config/.eslintrc` file
 1. Unit test configuration
-    - Update `.mocharc.json` to update configuration for Mocha
-    - Remove `.mochrc.json` and configure another testing framework
+    - Update `config/.mocharc.json` to update configuration for Mocha
+    - Remove `config/.mochrc.json` and configure another testing framework
 1. Release configuration using `release.config.js`
-1. Commitlint configuration (used for validating commit messages) using `commitlint.config.js`
+1. Commitlint configuration (used for validating commit messages) using `config/commitlint.config.js`
 1. [Husky](https://typicode.github.io/husky/#/) configuration
 
-### Create NPM Token
+#### Create NPM Token
 
 In order for the release step to run successfully, you must create a token in NPM that will
 allow you to publish the package as part of your release pipeline.
@@ -39,7 +39,34 @@ allow you to publish the package as part of your release pipeline.
 1. Create a new `Automation` access token and copy the value of the token
 1. Create a new Actions secret in your repo named `NPM_TOKEN` that contains the token you copied from NPM
 
-Once this has been completed, you should be able to run the release workflow and deploy your package to NPM successfully
+#### GitHub Configuration
+
+------
+
+There are a number of configurations within your GitHub project that are needed to help facilitate the secure release of your package
+
+##### Public Repositories
+
+With a public reposoitory, there is the possibility that you could have unexpected contributors making changes to your project.
+Therefore, there are a number of things that you can configure within the project to help keep your package secure and protected:
+
+- **Branch Protections** - You should enable branch protections on your `main` branch to ensure that users cannot push directly to the branch triggering a release
+- **Environment Configuration** - You can configure an environment for your project to help restrict a workflow to only run under certain conditions (branch = `main)
+- **Semantic Release Updates** - With branch protections enabled, semantic-release will be unable to push updates to your main branch by default, there are two options for this
+  - Have semantic-release push updates to a branch which you can then merge into main after the pipeline has completed successfully
+  - Create a personal access token with admin rights to your project and add the token as a secret in your environment configuration, preventing that token from being used in other workflows
+
+You can also choose to not turn on additional protections, which will prevent semantic-release from having issues with pushing updates as part of the release process,
+but that is not recommended as it leaves you open to malicious users.
+
+##### Private Repositories
+
+With private repositories, there is less risk of unexpected users making changes as all contributors have to be explicitly defined.
+That being said, adding protections defined in the `Public Repositories` section will help increase the security of your repository.
+
+------
+
+Once these steps have been completed, you should be able to run the release workflow and deploy your package to NPM successfully
 
 ### Commit Message Formatting
 
