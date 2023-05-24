@@ -15,19 +15,7 @@ Guide for getting this template repository set up for usage with your own NPM pa
     - Install all necessary dependencies
     - Set up Husky hooks to validate commit messages
 
-#### Additional Configuration Updates (optional)
-
-1. Build configuration using the `tsconfig.*.json` files
-    - `tsconfig.json` - General build configuration (rules, files, etc)
-    - `config/tsconfig.cjs.json` - Configuration for building package for CommonJS modules
-    - `config/tsconfig.esm.json` - Configuration for building package for ECMAScript modules
-1. ESLint configuration using the `config/.eslintrc` file
-1. Unit test configuration
-    - Update `config/.mocharc.json` to update configuration for Mocha
-    - Remove `config/.mochrc.json` and configure another testing framework
-1. Release configuration using `release.config.js`
-1. Commitlint configuration (used for validating commit messages) using `config/commitlint.config.js`
-1. [Husky](https://typicode.github.io/husky/#/) configuration
+Once the below steps have been completed, you should be able to run the release workflow and deploy your package to NPM successfully
 
 #### Create NPM Token
 
@@ -40,8 +28,6 @@ allow you to publish the package as part of your release pipeline.
 1. Create a new Actions secret in your repo named `NPM_TOKEN` that contains the token you copied from NPM
 
 #### GitHub Configuration
-
-------
 
 There are a number of configurations within your GitHub project that are needed to help facilitate the secure release of your package
 
@@ -64,9 +50,29 @@ but that is not recommended as it leaves you open to malicious users.
 With private repositories, there is less risk of unexpected users making changes as all contributors have to be explicitly defined.
 That being said, adding protections defined in the `Public Repositories` section will help increase the security of your repository.
 
-------
+#### Additional Configuration Updates (optional)
 
-Once these steps have been completed, you should be able to run the release workflow and deploy your package to NPM successfully
+1. Build configuration using the `tsconfig.*.json` files
+    - `tsconfig.json` - General build configuration (rules, files, etc)
+    - `config/tsconfig.cjs.json` - Configuration for building package for CommonJS modules
+    - `config/tsconfig.esm.json` - Configuration for building package for ECMAScript modules
+1. ESLint configuration using the `config/.eslintrc` file
+1. Unit test configuration
+    - Update `config/.mocharc.json` to update configuration for Mocha
+    - Remove `config/.mochrc.json` and configure another testing framework
+1. Release configuration using `release.config.js`
+1. Commitlint configuration (used for validating commit messages) using `config/commitlint.config.js`
+1. [Husky](https://typicode.github.io/husky/#/) configuration
+
+### Defining Contributions
+
+Use the [CONTRIBUTING.md](./CONTRIBUTING.md) file to define how contributions to your project should be made.
+
+This file should include:
+
+- Instructions for setting up the project locally
+- Expectations for development practices while updating the codebase
+- Expectations for issues and pull requests created within the project
 
 ### Commit Message Formatting
 
